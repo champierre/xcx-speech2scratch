@@ -3,7 +3,7 @@
  */
 
 import iconURL from './entry-icon.png';
-import insetIconURL from './inset-icon.svg';
+import insetIconURL from './inset-icon.png';
 import translations from './translations.json';
 
 /**
@@ -38,7 +38,7 @@ const entry = {
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: false,
-    helpLink: 'https://champierre.github.io/xcx-speech2scratch/',
+    helpLink: 'https://github.com/champierre/speech2scratch',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },

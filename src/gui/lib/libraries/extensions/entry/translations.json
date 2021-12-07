@@ -1,14 +1,14 @@
 {
   "en": {
     "speech2scratch.entry.name": "Speech2Scratch",
-    "speech2scratch.entry.description": "Description of this extension"
+    "speech2scratch.entry.description": "Recognize speech and convert to text."
   },
   "ja": {
     "speech2scratch.entry.name": "Speech2Scratch",
-    "speech2scratch.entry.description": "拡張機能の説明"
+    "speech2scratch.entry.description": "音声を認識してテキストに変換する。"
   },
   "ja-Hira": {
     "speech2scratch.entry.name": "Speech2Scratch",
-    "speech2scratch.entry.description": "かくちょうきのうのせつめい"
+    "speech2scratch.entry.description": "おんせいをにんしきしてテキストにへんかんする。"
   }
 }

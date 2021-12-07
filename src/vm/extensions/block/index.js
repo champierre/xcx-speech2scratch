@@ -27,6 +27,8 @@ const setupTranslations = () => {
 
 const EXTENSION_ID = 'speech2scratch';
 
+const SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+
 /**
  * URL to get this extension as a module.
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
@@ -35,7 +37,7 @@ const EXTENSION_ID = 'speech2scratch';
 let extensionURL = 'https://champierre.github.io/xcx-speech2scratch/dist/speech2scratch.mjs';
 
 /**
- * Scratch 3.0 blocks for example of Xcratch.
+ * Speech2Scratch blocks
  */
 class ExtensionBlocks {
 
@@ -84,6 +86,7 @@ class ExtensionBlocks {
          * @type {Runtime}
          */
         this.runtime = runtime;
+        this.speech = '';
 
         if (runtime.formatMessage) {
             // Replace 'formatMessage' to a formatter which is used in the runtime.
@@ -91,11 +94,16 @@ class ExtensionBlocks {
         }
     }
 
-    doIt (args) {
-        const func = new Function(`return (${Cast.toString(args.SCRIPT)})`);
-        const result = func.call(this);
-        console.log(result);
-        return result;
+    startRecognition () {
+        const recognition = new SpeechRecognition();
+        recognition.onresult = (event) => {
+            this.speech = event.results[0][0].transcript;
+        }
+        recognition.start();
+    }
+
+    getSpeech () {
+        return this.speech;
     }
 
     /**
@@ -111,21 +119,24 @@ class ExtensionBlocks {
             showStatusButton: false,
             blocks: [
                 {
-                    opcode: 'do-it',
-                    blockType: BlockType.REPORTER,
-                    blockAllThreads: false,
+                    opcode: 'startRecognition',
+                    blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'speech2scratch.doIt',
-                        default: 'do it [SCRIPT]',
-                        description: 'execute javascript for example'
+                        id: 'speech2scratch.startRecognition',
+                        default: 'start recognition',
+                        description: 'start speech recognition'
                     }),
-                    func: 'doIt',
-                    arguments: {
-                        SCRIPT: {
-                            type: ArgumentType.STRING,
-                            defaultValue: '3 + 4'
-                        }
-                    }
+                    func: 'startRecognition'
+                },
+                {
+                    opcode: 'getSpeech',
+                    blockType: BlockType.REPORTER,
+                    text: formatMessage({
+                        id: 'speech2scratch.getSpeech',
+                        default: 'speech',
+                        description: 'speech text'
+                    }),
+                    func: 'getSpeech'
                 }
             ],
             menus: {

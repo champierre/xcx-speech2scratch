@@ -1,14 +1,20 @@
 {
   "en": {
     "speech2scratch.name": "Speech2Scratch",
-    "speech2scratch.doIt": "do it [SCRIPT]"
+    "speech2scratch.doIt": "do it [SCRIPT]",
+    "speech2scratch.startRecognition": "start recognition",
+    "speech2scratch.getSpeech": "speech"
   },
   "ja": {
     "speech2scratch.name": "Speech2Scratch",
-    "speech2scratch.doIt": "[SCRIPT] を実行する"
+    "speech2scratch.doIt": "[SCRIPT] を実行する",
+    "speech2scratch.startRecognition": "音声認識を開始する",
+    "speech2scratch.getSpeech": "音声"
   },
   "ja-Hira": {
     "speech2scratch.name": "Speech2Scratch",
-    "speech2scratch.doIt": "[SCRIPT] をじっこうする"
+    "speech2scratch.doIt": "[SCRIPT] をじっこうする",
+    "speech2scratch.startRecognition": "おんせいにんしきをかいしする",
+    "speech2scratch.getSpeech": "おんせい"
   }
 }
