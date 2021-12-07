@@ -1,0 +1,12 @@
+{
+  "name": "xcx-speech2scratch",
+  "version": "0.0.0",
+  "scripts": {
+    "register": "npx xcratch-register --id=speech2scratch --gui=../scratch-gui --block=./src/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry --core --link --use=extension-support util",
+    "build": "npx xcratch-build --module=speech2scratch --gui=../scratch-gui --block=./src/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry"
+  },
+  "devDependencies": {
+    "xcratch-build": "^0.3.0",
+    "xcratch-register": "^0.4.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "en": {
+    "speech2scratch.name": "Speech2Scratch",
+    "speech2scratch.doIt": "do it [SCRIPT]"
+  },
+  "ja": {
+    "speech2scratch.name": "Speech2Scratch",
+    "speech2scratch.doIt": "[SCRIPT] を実行する"
+  },
+  "ja-Hira": {
+    "speech2scratch.name": "Speech2Scratch",
+    "speech2scratch.doIt": "[SCRIPT] をじっこうする"
+  }
+}

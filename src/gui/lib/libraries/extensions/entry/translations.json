@@ -1,0 +1,14 @@
+{
+  "en": {
+    "speech2scratch.entry.name": "Speech2Scratch",
+    "speech2scratch.entry.description": "Description of this extension"
+  },
+  "ja": {
+    "speech2scratch.entry.name": "Speech2Scratch",
+    "speech2scratch.entry.description": "拡張機能の説明"
+  },
+  "ja-Hira": {
+    "speech2scratch.entry.name": "Speech2Scratch",
+    "speech2scratch.entry.description": "かくちょうきのうのせつめい"
+  }
+}
