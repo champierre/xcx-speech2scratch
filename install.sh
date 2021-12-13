@@ -15,8 +15,8 @@ mv node_modules/scratch-vm/src/extension-support/extension-manager.js node_modul
 sed -e "s|class ExtensionManager {$|builtinExtensions['${EXTENSION_ID}'] = () => require('../extensions/scratch3_${EXTENSION_ID}');${LF}${LF}class ExtensionManager {|g" node_modules/scratch-vm/src/extension-support/extension-manager.js_orig > node_modules/scratch-vm/src/extension-support/extension-manager.js
 
 mkdir -p src/lib/libraries/extensions/${EXTENSION_ID}
-cp ${EXTENSION_ID}/src/gui/lib/libraries/extensions/entry-icon.png src/lib/libraries/extensions/${EXTENSION_ID}/
-cp ${EXTENSION_ID}/src/gui/lib/libraries/extensions/inset-icon.png src/lib/libraries/extensions/${EXTENSION_ID}/
+cp ${EXTENSION_ID}/src/gui/lib/libraries/extensions/entry/entry-icon.png src/lib/libraries/extensions/${EXTENSION_ID}/
+cp ${EXTENSION_ID}/src/gui/lib/libraries/extensions/entry/inset-icon.png src/lib/libraries/extensions/${EXTENSION_ID}/
 mv src/lib/libraries/extensions/index.jsx src/lib/libraries/extensions/index.jsx_orig
 DESCRIPTION="\
     {${LF}\
@@ -37,4 +37,4 @@ DESCRIPTION="\
         internetConnectionRequired: true,${LF}\
         bluetoothRequired: false${LF}\
     },"
-sed -e "s|^export default \[$|import ${EXTENSION_ID}IconURL from './${EXTENSION_ID}/${EXTENSION_ID}.png';${LF}import ${EXTENSION_ID}InsetIconURL from './${EXTENSION_ID}/${EXTENSION_ID}-small.png';${LF}${LF}export default [${LF}${DESCRIPTION}|g" src/lib/libraries/extensions/index.jsx_orig > src/lib/libraries/extensions/index.jsx
+sed -e "s|^export default \[$|import ${EXTENSION_ID}IconURL from './${EXTENSION_ID}/entry-icon.png';${LF}import ${EXTENSION_ID}InsetIconURL from './${EXTENSION_ID}/inset-icon.png';${LF}${LF}export default [${LF}${DESCRIPTION}|g" src/lib/libraries/extensions/index.jsx_orig > src/lib/libraries/extensions/index.jsx
